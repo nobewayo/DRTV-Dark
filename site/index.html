@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob:; font-src 'self'; worker-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>DRTV Dark</title>
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.mjs"></script>
+</head>
+<body>
+<div class="page" id="top">
+<div class="wrap">
+
+<header class="top">
+  <button class="back brand" id="homeBtn" type="button">DRTV Dark</button>
+  <span class="meta"><span id="versionText">Ikke udgivet endnu</span> <button class="lnk meta-lnk" id="logBtn" type="button" aria-expanded="false" aria-controls="changelog" hidden>Ændringer</button></span>
+</header>
+<div class="changelog" id="changelog" hidden></div>
+
+<!-- HOME -->
+<main id="home">
+  <div class="hero">
+    <div class="intro">
+      <h1 class="big">Gør DRTV mørk på dit TV</h1>
+      <p class="lead">Lav en mørk udgave af DRTV-appen, og installer den på dit TV.</p>
+    </div>
+
+    <div class="media">
+      <!-- Phone: one frame that alternates between the two pairs -->
+      <div class="mob">
+        <div class="cmp" data-cmp>
+          <div class="pair" data-pair="0">
+            <img src="images/home-before.webp" alt="">
+            <img src="images/home-after.webp" alt="" data-after>
+          </div>
+          <div class="pair pair-hidden" data-pair="1">
+            <img src="images/programme-seasons-before.webp" alt="">
+            <img src="images/programme-seasons-after.webp" alt="" data-after>
+          </div>
+          <div class="line" aria-hidden="true"></div>
+          <div class="knob" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6"/><path d="M15 6l6 6-6 6"/></svg></div>
+          <input type="range" min="0" max="100" step="0.5" aria-label="Træk for at sammenligne den almindelige DRTV-app med DRTV Dark">
+        </div>
+      </div>
+      <!-- Desktop: both pairs stacked, sliders move together -->
+      <div class="desk">
+        <div class="cmp" data-cmp>
+          <div class="pair">
+            <img src="images/home-before.webp" alt="">
+            <img src="images/home-after.webp" alt="" data-after>
+          </div>
+          <div class="line" aria-hidden="true"></div>
+          <div class="knob" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6"/><path d="M15 6l6 6-6 6"/></svg></div>
+          <input type="range" min="0" max="100" step="0.5" aria-label="Forsiden: træk for at sammenligne den almindelige DRTV-app med DRTV Dark">
+        </div>
+        <div class="cmp" data-cmp>
+          <div class="pair">
+            <img src="images/programme-seasons-before.webp" alt="">
+            <img src="images/programme-seasons-after.webp" alt="" data-after>
+          </div>
+          <div class="line" aria-hidden="true"></div>
+          <div class="knob" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6"/><path d="M15 6l6 6-6 6"/></svg></div>
+          <input type="range" min="0" max="100" step="0.5" aria-label="Programsiden: træk for at sammenligne den almindelige DRTV-app med DRTV Dark">
+        </div>
+      </div>
+      <p class="hint">Træk i linjen for at sammenligne</p>
+    </div>
+
+    <div class="need">
+      <h2>Det skal du bruge</h2>
+      <ul class="checks">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a9c7ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>
+          <div><strong class="semi">Et TV med Google TV eller Android TV</strong><small>Fx Chromecast med Google TV. Ikke Apple TV.</small></div></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a9c7ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>
+          <div><strong class="semi">En computer eller telefon</strong><small>Det er lettest fra en computer.</small></div></li>
+      </ul>
+      <div class="cta">
+        <button class="go" id="startBtn" type="button">Start</button>
+        <button class="lnk" id="askTvBtn" type="button">Hvilke TV virker det på?</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FLOW -->
+<main id="flow" hidden>
+  <div class="progress" id="flowTop">
+    <div class="grp grp-a">
+      <div class="lbl" id="p1lbl">Del 1: Lav filen</div>
+      <div class="segs" id="segA"></div>
+    </div>
+    <div class="grp grp-b">
+      <div class="lbl" id="p2lbl">Del 2: Installer den på TV'et</div>
+      <div class="segs" id="segB"></div>
+    </div>
+  </div>
+
+  <section class="step" data-step="1">
+    <h1>Hent DRTV</h1>
+    <p class="txt">Hent den originale DRTV-app til Android TV. Filen skal kun gemmes, ikke installeres.</p>
+    <a class="go" id="dl1" target="_blank" rel="noopener noreferrer">Hent DRTV</a>
+    <p class="note">Hentes fra APKPure. Kun denne version virker.</p>
+  </section>
+
+  <section class="step" data-step="2">
+    <h1>Vælg filen</h1>
+    <p class="txt">Vælg den hentede DRTV-fil. Den ender på .xapk.</p>
+    <label class="pick" id="pick">
+      <input type="file" id="fileInput" accept=".xapk,.apk" multiple disabled>
+      <strong>Vælg fil</strong><small>eller træk den herind</small>
+    </label>
+    <div class="file" id="fileChip" hidden>
+      <div class="file-main"><b id="fileName"></b><small id="fileStatus" role="status" aria-live="polite"></small></div>
+      <button class="lnk lnk-quiet" id="unpick" type="button">Vælg en anden</button>
+    </div>
+    <p class="note err" id="pickError" role="alert" hidden></p>
+  </section>
+
+  <section class="step" data-step="3">
+    <h1>Gør den mørk</h1>
+    <div id="s3idle">
+      <p class="txt">Filen behandles i browseren og sendes ingen steder hen.</p>
+      <button class="go" id="runBtn" type="button">Gør den mørk</button>
+      <p class="note" id="gateText" hidden>Den mørke udgave kan ikke laves endnu. DRTV Dark er ikke udgivet, og siden kan derfor ikke lave filen.</p>
+    </div>
+    <div id="s3run" hidden>
+      <p class="status-line" id="statusText" aria-live="polite">Kontrollerer filen</p>
+      <div class="bar-track" role="progressbar" aria-label="Arbejder" aria-busy="true"><div class="bar-fill bar-busy" id="barFill"></div></div>
+      <p class="note note-tight">Hold siden åben imens.</p>
+      <button class="lnk" id="cancelBtn" type="button">Annuller</button>
+    </div>
+    <div id="s3done" hidden>
+      <p class="txt">Den mørke udgave er klar.</p>
+      <a class="go" id="dl3" href="#" download>Download DRTV Dark</a>
+      <p class="note note-tight" id="dl3Text"></p>
+      <a class="lnk lnk-quiet" id="audit" href="#" download="drtv-dark-kontrol.json">Gem teknisk kontrolrapport</a>
+    </div>
+    <div id="s3err" hidden>
+      <p class="txt" id="errText" role="alert"></p>
+      <button class="go" id="retryBtn" type="button">Prøv igen</button>
+      <p class="note" id="errDetail"></p>
+    </div>
+  </section>
+
+  <section class="step" data-step="guide">
+    <p class="kicker" id="gKicker"></p>
+    <h1 id="gTitle"></h1>
+    <p class="txt txt-lines" id="gText"></p>
+    <div class="appcard" id="gApp" hidden>
+      <div><small>Søg efter</small><b>Downloader TV: APK Installer</b></div>
+      <div><small>Udvikler</small><b class="accent">Smartago</b></div>
+    </div>
+    <div class="shot shot-img"><img id="gShot" alt="" width="1600" height="900"></div>
+    <p class="note" id="gCaption"></p>
+  </section>
+
+  <section class="step" data-step="done">
+    <h1>Færdig</h1>
+    <p class="txt txt-short">Åbn DRTV Dark på dit TV, og log ind.</p>
+    <p class="done-note">Appen giver selv besked, når der kommer en ny version.</p>
+  </section>
+
+  <div class="navbar">
+    <button class="back" id="backBtn" type="button">Tilbage</button>
+    <button class="go" id="nextBtn" type="button">Videre</button>
+    <button class="out" id="homeEndBtn" type="button" hidden>Til forsiden</button>
+  </div>
+</main>
+
+<!-- FAQ -->
+<section class="faq" id="faq" aria-labelledby="faqTitle">
+  <h2 id="faqTitle">Spørgsmål og svar</h2>
+  <div class="faq-list" id="faqList"></div>
+</section>
+
+<p class="legal">DRTV Dark er et uafhængigt projekt uden tilknytning til DR, Smartago, APKPure eller Google. DRTV Dark distribuerer ikke DR's app.</p>
+</div>
+</div>
+</body>
+</html>

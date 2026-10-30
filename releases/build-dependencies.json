@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "hostOnly": true,
+  "files": {
+    "com/android/tools/smali/smali-dexlib2/3.0.9/smali-dexlib2-3.0.9.jar": "8b547506f62f91d74b70f4beb4989b99e1ff61fc50b2525e9796ca35f0a351dc",
+    "com/google/guava/guava/33.4.0-jre/guava-33.4.0-jre.jar": "b918c98a7e44dbe94ebd9fe3e40cddaadb5a93e6a78eb6008b42df237241e538",
+    "com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar": "8a8f81cf9b359e3f6dfa691a1e776985c061ef2f223c9b2c80753e1b458e8064",
+    "com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7",
+    "tools/apktool.jar": "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423"
+  },
+  "python": {
+    "bsdiff4": "1.2.6",
+    "cryptography": "50.0.2"
+  },
+  "androidBuildTools": "35.0.0",
+  "androidPlatform": 35
+}

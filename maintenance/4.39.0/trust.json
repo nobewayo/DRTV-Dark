@@ -1,0 +1,16 @@
+{
+  "schema": 3,
+  "developmentOnly": false,
+  "commonCertificate": "08493594bb8954cedb78c39171c15f7ef1d471e210b4f5483db46a4255dd3518",
+  "releaseSpki": "MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEA1LrTVVg9BTG/NhZbH8fahdhl3roE3UVcc1KzPhja1QT/0vigdWi7cfEykn0Y4wMDJdA5Z1s0Cxi/ZpRr8L9VTRKM3nt3TF+WWokoWNyKZ5Ofc9GkI8yTn/NtY8sXbu08ayaUnTNi21mu4vOs04b2qflY6l3vMXm7AWrg0yqvk/wkg262mM4UGUgH3O1I0O91eh7wf058B3JPI/qopPzT284J+5fO9J6PEAlpm/wPs68GxJVSPdajJkKsS9X7mM0Zj1tl83U/aMqaZaY8RJZKVDU+x/t491Lt+bfQuoxQi8FK5KR3v5Q+VQasX1J5/Y/El/APK8/n2dcSPZCElzxz3t2PlZ/ZUWW8KpCj1XbzOZKPNpuFUjIzcobWc6B5mdYiQgV8LzpXYHXo+2r+KOden+cOY0TxfSG+7oGd9WoH4Gcb16v8c5fd6OhWUDi1oemGoza/BYekx3DkC5oqhGyrwgCY8hhhrWDUhrgCpZKu2Idg+558+TNNvn8GfDNlDzRdAgMBAAE=",
+  "releaseKey": {
+    "kty": "RSA",
+    "alg": "RS256",
+    "ext": true,
+    "key_ops": [
+      "verify"
+    ],
+    "n": "1LrTVVg9BTG_NhZbH8fahdhl3roE3UVcc1KzPhja1QT_0vigdWi7cfEykn0Y4wMDJdA5Z1s0Cxi_ZpRr8L9VTRKM3nt3TF-WWokoWNyKZ5Ofc9GkI8yTn_NtY8sXbu08ayaUnTNi21mu4vOs04b2qflY6l3vMXm7AWrg0yqvk_wkg262mM4UGUgH3O1I0O91eh7wf058B3JPI_qopPzT284J-5fO9J6PEAlpm_wPs68GxJVSPdajJkKsS9X7mM0Zj1tl83U_aMqaZaY8RJZKVDU-x_t491Lt-bfQuoxQi8FK5KR3v5Q-VQasX1J5_Y_El_APK8_n2dcSPZCElzxz3t2PlZ_ZUWW8KpCj1XbzOZKPNpuFUjIzcobWc6B5mdYiQgV8LzpXYHXo-2r-KOden-cOY0TxfSG-7oGd9WoH4Gcb16v8c5fd6OhWUDi1oemGoza_BYekx3DkC5oqhGyrwgCY8hhhrWDUhrgCpZKu2Idg-558-TNNvn8GfDNlDzRd",
+    "e": "AQAB"
+  }
+}

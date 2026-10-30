@@ -1,0 +1,75 @@
+[
+  {
+    "where": "tv",
+    "title": "Behold DRTV",
+    "text": "Den almindelige DRTV-app kan blive installeret som reserve, hvis DRTV Dark en dag ikke virker. Fortsæt til næste trin.",
+    "src": "",
+    "alt": "",
+    "caption": ""
+  },
+  {
+    "where": "tv",
+    "title": "Installér Downloader",
+    "text": "Søg efter appen herunder i Google Play på TV’et, og installer den. Spring trinnet over, hvis den allerede er installeret.",
+    "app": true,
+    "src": "guide/02-google-play.webp",
+    "alt": "Google Play på TV’et viser Downloader TV: APK Installer fra Smartago med knappen Install.",
+    "caption": "Downloader i Google Play på TV’et."
+  },
+  {
+    "where": "tv",
+    "title": "Giv Downloader lov",
+    "text": "Åbn Downloader, og vælg Continue og derefter Grant Permission. Slå Downloader By Smartago til, og tryk Tilbage på fjernbetjeningen.",
+    "src": "guide/03-tilladelse.webp",
+    "alt": "Androids side Install unknown apps, hvor Downloader By Smartago står som Allowed.",
+    "caption": "Når der står Allowed, er det på plads."
+  },
+  {
+    "where": "tv",
+    "title": "Åbn Web Installer",
+    "text": "Vælg Web Installer i menuen til venstre.",
+    "src": "guide/04-web-installer.webp",
+    "alt": "Downloaders menu til venstre med punkterne Downloader, Browser, File Installer og Web Installer.",
+    "caption": "Menuen i Downloader."
+  },
+  {
+    "where": "tv",
+    "title": "Forbind enheden med filen",
+    "text": "Brug den telefon eller computer, som DRTV Dark-filen blev downloadet på. Telefon: scan QR-koden på TV’et. Computer: gå til sendtotvquick.com/send, og indtast koden fra TV’et.",
+    "src": "guide/05-forbind.webp",
+    "alt": "Web Installer på TV’et med teksten Send Apps From Any Device og adressen sendtotvquick.com/send. Koden og QR-koden er sløret.",
+    "caption": "Koden og QR-koden er sløret her."
+  },
+  {
+    "where": "device",
+    "title": "Send filen til TV’et",
+    "text": "Vælg {fil} under Upload fil, og tryk SEND. Overførslen går via Smartagos tjeneste.",
+    "src": "guide/06-send-filen.webp",
+    "alt": "Smartagos side Send Data i en browser på en computer. Under Upload fil står knappen Choose File, og under den er den grønne knap SEND. Oplysningerne om det forbundne TV er sløret.",
+    "caption": "Smartagos side på computeren."
+  },
+  {
+    "where": "tv",
+    "title": "Tag imod filen",
+    "text": "Vælg Installer, når filen dukker op på TV’et.",
+    "src": "guide/07-modtag-filen.webp",
+    "alt": "Downloader på TV’et viser den modtagne fil med valgene Installer, Download Only og Decline. QR-koden er sløret.",
+    "caption": "Den modtagne fil på TV’et."
+  },
+  {
+    "where": "tv",
+    "title": "Bekræft installationen",
+    "text": "TV’et spørger, om DRTV Dark skal installeres. Cancel er valgt fra start. Tryk til venstre og derefter OK for at vælge Install.",
+    "src": "guide/08-bekraeft.webp",
+    "alt": "Androids dialog: DRTV Dark, Do you want to install this app? med knapperne Install og Cancel.",
+    "caption": "Androids installationsboks."
+  },
+  {
+    "where": "tv",
+    "title": "Åbn DRTV Dark",
+    "text": "Vælg Åben, når installationen er færdig. Spørger Downloader bagefter, om filen skal slettes, kan den godt slettes. Appen er allerede installeret.",
+    "src": "guide/09-installeret.webp",
+    "alt": "Downloader viser Installation complete for drtv-dark-v1.apks med knapperne Afinstaller, Åben og Færdiggør.",
+    "caption": "Installationen er færdig."
+  }
+]

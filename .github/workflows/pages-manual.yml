@@ -1,0 +1,61 @@
+name: Owner-approved prebuilt Pages deployment
+on:
+  workflow_dispatch:
+    inputs:
+      release_asset_id:
+        description: Owner-uploaded audited static ZIP release-asset ID (same repository)
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: owner-pages
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.repository == 'nobewayo/DRTV-Dark'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Fail closed before fetching an unapproved artifact
+        run: python3 -c "import json; assert json.load(open('releases/publication-approval.json'))['approved'] is True"
+      - name: Download exact existing artifact without signing or building
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ inputs.release_asset_id }}
+        run: |
+          python3 - <<'PY'
+          import os,re,subprocess
+          value=os.environ['ARTIFACT_ID']
+          assert re.fullmatch('[1-9][0-9]{0,19}',value)
+          import json
+          endpoint='/repos/'+os.environ['GITHUB_REPOSITORY']+'/releases/assets/'+value
+          info=json.loads(subprocess.check_output(['gh','api',endpoint]))
+          assert info['name'].endswith('.zip') and 0<info['size']<=32*1024*1024
+          with open(os.path.join(os.environ['RUNNER_TEMP'],'candidate.zip'),'wb') as f:
+              subprocess.run(['gh','api','-H','Accept: application/octet-stream',endpoint],stdout=f,check=True)
+          PY
+      - name: Verify approved source tree, digest, strict static inventory and production identities
+        # The checkout must be exactly the approved source export; downloads stay outside it.
+        run: python3 -B scripts/publication.py --source . --archive "$RUNNER_TEMP/candidate.zip" --extract "$RUNNER_TEMP/audited-static"
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
+        with:
+          path: ${{ runner.temp }}/audited-static
+          include-hidden-files: true
+  deploy:
+    needs: verify
+    runs-on: ubuntu-24.04
+    environment:
+      name: owner-approved-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+      actions: read
+    steps:
+      - uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346
+        id: pages

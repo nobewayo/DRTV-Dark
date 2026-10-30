@@ -1,0 +1,16 @@
+work/
+build/
+original/
+__pycache__/
+*.pyc
+*.apk
+*.apks
+*.xapk
+*.jar
+*.class
+*.pk8
+*.pem
+*.key
+*.p12
+*.jks
+.env*

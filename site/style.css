@@ -1,0 +1,160 @@
+/* DRTV Dark website. The first section is the approved prototype stylesheet,
+   copied unchanged from drtv-dark-site-prototype.zip. Integration additions
+   follow at the end and only replace former inline styles or add states the
+   real engine needs. */
+
+/* Schibsted Grotesk, self-hosted. Copyright 2023 The Schibsted-Grotesk Project
+   Authors. SIL Open Font License 1.1, see fonts/OFL.txt. Same variable WOFF2
+   subsets and unicode ranges that Google Fonts served to the prototype. */
+/* One face per weight exactly as Google Fonts declared them for the prototype, so that
+   unlisted weights (600) resolve the same way (to 700). */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/schibsted-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/schibsted-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/schibsted-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/schibsted-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/schibsted-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/schibsted-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/schibsted-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/schibsted-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* ---------- approved prototype stylesheet ---------- */
+:root{
+  --bg:#111214; --panel:#17181b; --panel2:#1b1c1f; --line:#26282c;
+  --text:#eceef1; --text2:#b9bcc3; --muted:#8b8e95; --muted2:#9a9da4;
+  --accent:#a9c7ff; --accent-hover:#c4d8ff; --accent-ink:#0f1a2e;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Schibsted Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.5}
+a{color:var(--accent)}a:hover{color:#d6e4ff}
+[hidden]{display:none !important}
+.page{min-height:100vh;padding:clamp(14px,3vw,28px) 16px 40px}
+.wrap{max-width:1000px;margin:0 auto}
+
+/* buttons */
+.go,.out{appearance:none;cursor:pointer;font:inherit;font-size:17px;border-radius:999px;min-height:50px;padding:0 26px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+.go{font-weight:700;background:var(--accent);border:1px solid var(--accent);color:var(--accent-ink)}
+.go:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:var(--accent-ink)}
+.go:disabled{background:#26344d;border-color:#26344d;color:#8fa3c6;cursor:default}
+.out{font-weight:600;background:#2a2d33;border:1px solid #3d4149;color:var(--text)}
+.out:hover{background:#33373e;border-color:#565b64;color:#fff}
+.out:disabled{opacity:.45;cursor:default}
+.back{appearance:none;border:0;background:none;font:inherit;font-size:16px;color:var(--muted2);cursor:pointer;min-height:50px;padding:0 6px}
+.back:hover{color:#fff}
+.lnk{appearance:none;border:0;background:none;padding:0;font:inherit;font-size:15px;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px;min-height:44px}
+.lnk:hover{color:#d6e4ff}
+button:focus-visible,a:focus-visible,label:focus-within{outline:2px solid var(--accent);outline-offset:3px}
+
+/* header */
+.top{display:flex;justify-content:space-between;align-items:center;gap:4px 12px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:20px;color:var(--text);padding:0;min-height:44px}
+.meta{font-size:14px;color:var(--muted)}
+.changelog{background:var(--panel2);border-radius:14px;padding:12px 16px;font-size:15px;color:var(--text2);margin-top:8px}
+.changelog p{margin:0}
+
+/* home */
+.hero{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"intro" "media" "need";gap:24px;margin-top:clamp(20px,5vw,48px)}
+.intro{grid-area:intro}
+.media{grid-area:media;align-self:center}
+.need{grid-area:need}
+.eyebrow{margin:0 0 8px;font-size:14px;font-weight:700;color:var(--accent)}
+h1.big{margin:0 0 12px;font-size:clamp(30px,6vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.08}
+.lead{margin:0;color:var(--text2);font-size:18px;max-width:440px}
+.need h2{margin:0 0 10px;font-size:15px;font-weight:700;color:var(--muted)}
+.checks{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks svg{flex:0 0 20px;margin-top:3px}
+.checks small{display:block;color:var(--muted2);font-size:15px}
+.cta{display:flex;align-items:center;gap:8px 22px;flex-wrap:wrap}
+
+/* compare slider */
+.cmp{position:relative;border-radius:14px;border:6px solid var(--line);overflow:hidden;user-select:none;background:#000;aspect-ratio:16/9}
+.cmp .pair{position:absolute;inset:0;transition:opacity .7s ease}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.cmp .line{position:absolute;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--accent);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.cmp .tag{position:absolute;bottom:10px;font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px;pointer-events:none}
+.cmp .tag.before{left:10px;color:#2b2b2b;background:rgba(255,255,255,.85)}
+.cmp .tag.after{right:10px;color:var(--text);background:rgba(0,0,0,.65)}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+.hint{margin:8px 0 0;font-size:13px;color:var(--muted);text-align:center}
+.desk{display:none}
+.mob{display:block}
+
+/* flow */
+.progress{display:flex;gap:12px 16px;flex-wrap:wrap;margin-top:clamp(14px,3vw,28px)}
+.progress .grp{min-width:0}
+.progress .lbl{font-size:13px;margin-bottom:5px;color:var(--muted)}
+.progress .lbl.on{color:var(--text)}
+.progress .segs{display:grid;gap:4px}
+.progress .seg{height:4px;border-radius:2px;background:#2a2c30}
+.progress .seg.on{background:var(--accent)}
+.step{margin-top:clamp(20px,4vw,36px);max-width:720px}
+.step h1{margin:0 0 8px;font-size:clamp(26px,5.5vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.step .txt{margin:0 0 20px;color:var(--text2)}
+.step .note{margin:12px 0 0;font-size:14px;color:var(--muted)}
+.kicker{margin:0 0 2px;font-size:14px;color:var(--muted)}
+.pick{position:relative;cursor:pointer;font-size:18px;color:var(--text);background:var(--panel);border:2px dashed #3a3d43;border-radius:16px;width:100%;min-height:130px;padding:20px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pick:hover,.pick.drag{border-color:var(--accent)}
+.pick input{position:absolute;width:1px;height:1px;opacity:0}
+.pick small{font-size:15px;color:var(--muted)}
+.file{background:var(--panel);border:2px solid var(--accent);border-radius:16px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:4px 12px;flex-wrap:wrap}
+.file b{display:block;overflow-wrap:anywhere}
+.file small{font-size:14px;color:var(--muted)}
+.bar-track{height:10px;border-radius:5px;background:#25272b;overflow:hidden}
+.bar-fill{height:10px;width:0;background:var(--accent);transition:width .6s ease}
+.appcard{display:flex;gap:8px 28px;flex-wrap:wrap;background:var(--panel2);border-radius:14px;padding:12px 16px;margin-bottom:16px}
+.appcard small{display:block;font-size:13px;color:var(--muted)}
+.appcard b{font-size:18px}
+.shot{aspect-ratio:16/9;border-radius:12px;border:6px solid var(--line);background:var(--panel);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;text-align:center;padding:12px}
+.navbar{position:sticky;bottom:0;z-index:2;background:var(--bg);border-top:1px solid var(--line);margin-top:28px;max-width:720px;padding:12px 0;padding-bottom:max(12px,env(safe-area-inset-bottom));display:flex;justify-content:space-between;align-items:center;gap:12px}
+
+/* faq */
+.faq{margin-top:clamp(40px,7vw,72px)}
+.faq h2{margin:0 0 6px;font-size:22px;font-weight:800}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.q{appearance:none;border:0;background:none;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;min-height:54px;text-align:left;font:inherit;font-size:17px;font-weight:600;color:var(--text);cursor:pointer}
+.q svg{flex:0 0 20px;transition:transform .2s}
+.q[aria-expanded="true"] svg{transform:rotate(180deg)}
+.a{margin:-4px 0 16px;color:var(--text2);white-space:pre-line;max-width:720px}
+.legal{margin:28px 0 0;font-size:13px;color:#6d7077}
+
+@media (min-width:880px){
+  .hero{grid-template-columns:minmax(0,5fr) minmax(0,6fr);grid-template-areas:"intro media" "need media";grid-template-rows:auto 1fr;column-gap:56px;row-gap:28px;align-items:start}
+  .navbar{flex-direction:row-reverse;justify-content:flex-end;gap:20px;border-top:0;padding-top:4px}
+}
+@media (prefers-reduced-motion:reduce){
+  .cmp .pair,.bar-fill,.q svg{transition:none}
+}
+
+/* ---------- integration additions ---------- */
+/* former inline styles */
+.meta-lnk{font-size:14px;margin-left:6px}
+.changelog strong{color:var(--text)}
+.pair-hidden{opacity:0}
+.semi{font-weight:600}
+.grp-a{flex:3 1 140px}
+.grp-b{flex:6 1 220px}
+.file-main{min-width:0}
+.lnk-quiet{color:var(--muted2)}
+.status-line{margin:0 0 12px}
+.step .note-tight{margin-top:10px}
+.step .txt.txt-lines{white-space:pre-line;margin-bottom:18px}
+.accent{color:var(--accent)}
+.step .txt.txt-short{margin-bottom:8px}
+.done-note{margin:0;color:var(--muted);font-size:15px}
+/* real screenshots inside the approved screenshot frame */
+.shot.shot-img{padding:0;overflow:hidden;display:block}
+.shot-img img{display:block;width:100%;height:100%;object-fit:cover}
+/* states the real engine needs */
+a.lnk{display:inline-flex;align-items:center}
+.pick.off{opacity:.5;cursor:default;border-color:#3a3d43}
+.file.wait{border-color:#3d4149}
+.file.bad{border-color:#ffb4ab}
+.step .note.err{color:#ffb4ab}
+.bar-fill.bar-busy{width:35%;animation:busy 1.6s ease-in-out infinite}
+@keyframes busy{from{transform:translateX(-100%)}to{transform:translateX(290%)}}
+@media (prefers-reduced-motion:reduce){
+  .bar-fill.bar-busy{animation:none;width:100%;opacity:.5}
+}

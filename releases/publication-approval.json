@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "approved": true,
+  "archiveSha256": "a7fc32dddff742da17cc2100e2e1636dbf7f3106aefeaa49a3ad392a1ed91e6a",
+  "integritySha256": "9efbc8babf261c0b28bd734abd771ff88bca476565790690bf304ee0c6cd4b40",
+  "trustSha256": "0995a2afe867bac37aaa41af32238aca285df35bed10a972dbbbaab40c832ce6",
+  "certificateSha256": "08493594bb8954cedb78c39171c15f7ef1d471e210b4f5483db46a4255dd3518",
+  "metadataSpkiSha256": "a42302d7252889428c8c278053f990a2842e63393b823e603663a64b33670625",
+  "package": "io.github.nobewayo.drtvdark",
+  "releaseData": {
+    "schema": 1,
+    "release": {
+      "id": "drtv-dark-1",
+      "darkVersion": "1",
+      "sequence": 32,
+      "minInstalledSequence": 32,
+      "releaseDate": "2026-10-29",
+      "released": true,
+      "developmentOnly": false,
+      "changes": [
+        {
+          "version": "1",
+          "date": "2026-10-29",
+          "text": "Første udgave. Mørkt tema til DR TV 4.39.0 som selvstændig app ved siden af den almindelige DR TV, med indbygget tjek for nye udgaver."
+        }
+      ]
+    },
+    "original": {
+      "package": "dk.dr.tvplayer",
+      "versionName": "4.39.0",
+      "versionCode": 439000
+    },
+    "application": {
+      "package": "io.github.nobewayo.drtvdark",
+      "distribution": "coexistence"
+    }
+  },
+  "releaseDataCanonicalSha256": "da4d45ecc07f8497cdeb39262df949950ae9ed91d32cf7cb91741a59d04e596e",
+  "sourceExportManifestSha256": "771bd320b5ca233f6a2071438fb95b16e4c3d435eb731c88160551c6f969eb61"
+}

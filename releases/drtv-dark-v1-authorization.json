@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "approved": true,
+  "releaseDataSha256": "6f9bcb127738d3839348d6d83e7a91764e2ca2bdbfcae328e06e52adb5b54d4a",
+  "trustSha256": "0995a2afe867bac37aaa41af32238aca285df35bed10a972dbbbaab40c832ce6",
+  "website": "https://nobewayo.github.io/DRTV-Dark/",
+  "endpoint": "https://nobewayo.github.io/DRTV-Dark/updates.json",
+  "upgradeFrom": []
+}
